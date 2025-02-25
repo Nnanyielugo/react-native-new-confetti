@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import ConfettiImage from '../assets/confetti.jpg';
+import ConfettiImage from './assets/confetti.jpg';
 import { StyleSheet, View } from 'react-native';
 import AnimatedPiece from './components/AnimatedPiece';
 import { createConfetti } from './utils/functions';

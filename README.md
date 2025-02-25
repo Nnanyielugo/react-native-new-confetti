@@ -1,6 +1,6 @@
 # react-native-new-confetti
 
-Confetti package created with reanimated 3
+Confetti package created with reanimated v3
 
 ## Installation
 
@@ -10,15 +10,21 @@ npm install react-native-new-confetti
 
 ## Usage
 
-
 ```js
-import { multiply } from 'react-native-new-confetti';
+import Confetti from 'react-native-new-confetti';
 
 // ...
 
-const result = await multiply(3, 7);
+<Confetti
+  numConfetti={80}
+  run={confettiActive}
+  onConfettiRunFinished={() => {
+    setConfettiActive(false);
+  }}
+/>;
 ```
 
+**More documenation coming very soon**
 
 ## Contributing
 

@@ -1,12 +1,37 @@
-import { multiply } from 'react-native-new-confetti';
-import { Text, View, StyleSheet } from 'react-native';
+import Confetti from 'react-native-new-confetti';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import React from 'react';
 
-const result = multiply(3, 7);
+type ButtonProps = {
+  onPress: () => any;
+  active: boolean;
+};
+const Button = ({ onPress, active }: ButtonProps) => {
+  return (
+    <TouchableOpacity activeOpacity={0.5} onPress={onPress}>
+      <View
+        style={[
+          styles.buttonContainer,
+          active && { backgroundColor: '#D9FFC9' },
+        ]}
+      >
+        <Text>{active ? 'Active' : 'Press'}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+};
 
 export default function App() {
+  const [confettiActive, setConfettiActive] = React.useState(false);
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Button active={confettiActive} onPress={() => setConfettiActive(true)} />
+      <Confetti
+        run={confettiActive}
+        onConfettiRunFinished={() => {
+          setConfettiActive(false);
+        }}
+      />
     </View>
   );
 }
@@ -14,7 +39,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+  },
+  buttonContainer: {
+    borderColor: 'gray',
+    borderWidth: StyleSheet.hairlineWidth,
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 10,
   },
 });

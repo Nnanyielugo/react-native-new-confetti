@@ -1,6 +1,6 @@
 {
   "name": "react-native-new-confetti",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Confetti package created with reanimated 3",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",

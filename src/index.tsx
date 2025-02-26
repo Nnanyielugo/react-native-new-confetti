@@ -8,6 +8,7 @@ import {
   CONFETTI_COLORS,
   CONFETTI_SIZE_BAND,
   NUM_CONFETTI,
+  TIMEOUT_THRESHOLD,
   Y_BAND,
 } from './utils/constants';
 import type { ConfettiItems, ConfettiProps } from './utils/types';
@@ -19,8 +20,8 @@ const Confetti = ({
   confettiImage = ConfettiImage,
   yBand = Y_BAND,
   run = true,
-  timeoutThreshold = 10000,
-  onConfettiRunFinished = () => {},
+  timeoutThreshold = TIMEOUT_THRESHOLD,
+  onConfettiRunFinished,
 }: ConfettiProps) => {
   const [confettiItems, createConfettiItems] = useState<ConfettiItems[]>([]);
   const [timing, setTiming] = useState(0);

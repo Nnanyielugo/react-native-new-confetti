@@ -1,6 +1,6 @@
 {
   "name": "react-native-new-confetti",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Confetti package created with reanimated 3",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -91,7 +91,8 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-reanimated": "^3.0.0"
   },
   "workspaces": [
     "example"

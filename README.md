@@ -2,6 +2,11 @@
 
 Confetti package created with reanimated v3 and no other external dependencies.
 
+#### iOS
+
+https://github.com/user-attachments/assets/f8fe0459-bdb9-47b7-91b1-ef0055c3ab70
+
+
 ## Installation
 
 ```sh

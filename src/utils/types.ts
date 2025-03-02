@@ -1,6 +1,6 @@
 import type { ImageSourcePropType } from 'react-native';
 
-export type ConfettiProps = {
+export type BaseProps = {
   /**
    * @description whether the confetti should run or not
    * @default false
@@ -11,21 +11,6 @@ export type ConfettiProps = {
    * @returns void
    */
   onConfettiRunFinished: () => void;
-  /**
-   * @description color range of confetti pieces.
-   * @default[
-      '#54d1fe',
-      '#FF0000',
-      '#2d93ad',
-      '#000000',
-      '#00FF00',
-      '#ffd639',
-      '#0a0b3d',
-      '#ea6645',
-      '#39ffa0',
-      ];
-   */
-  confettiColors?: string[];
   /**
    * @description a size range of for confetti pieces.
    * @default[10, 19]
@@ -53,16 +38,40 @@ export type ConfettiProps = {
   timeoutThreshold?: number;
 };
 
+export interface MoneyConfettiProps extends BaseProps {}
+
+export interface DefaultConfettiProps extends BaseProps {
+  /**
+   * @description color range of confetti pieces.
+   * @default[
+      '#54d1fe',
+      '#FF0000',
+      '#2d93ad',
+      '#000000',
+      '#00FF00',
+      '#ffd639',
+      '#0a0b3d',
+      '#ea6645',
+      '#39ffa0',
+      ];
+   */
+  confettiColors?: string[];
+}
+
+export interface CustomConfettiProps extends BaseProps {}
+
 export type AnimatedPieceProps = {
   x: number;
   y: number;
   rotate: number;
-  color: string;
+  color?: string;
   xVel: number;
   yVel: number;
   elasticity: number;
   image: ImageSourcePropType;
   size: number;
+  withRect?: boolean;
+  withTintColor?: boolean;
 };
 
 export type ConfettiItems = {
@@ -70,7 +79,7 @@ export type ConfettiItems = {
   x: number;
   y: number;
   rotate: number;
-  color: string;
+  color?: string;
   xVel: number;
   yVel: number;
   elasticity: number;

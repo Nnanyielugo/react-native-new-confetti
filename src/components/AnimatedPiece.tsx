@@ -17,6 +17,8 @@ const AnimatedPiece = ({
   elasticity,
   image,
   size,
+  withRect,
+  withTintColor,
 }: AnimatedPieceProps) => {
   const { width: screenWidth, height: screenHeight } = Dimensions.get('screen');
   const sharedX = useSharedValue(x);
@@ -61,12 +63,14 @@ const AnimatedPiece = ({
       ],
     };
   });
+  const width = withRect ? size * 2 : size;
+  const tintColor = withTintColor ? color : '';
   return (
     <Animated.View style={[styles.confettiContainer, animatedStyle]}>
       <Image
         source={image}
-        style={{ width: size, height: size, zIndex: 999 }}
-        tintColor={color}
+        style={{ width: width, height: size, zIndex: 999 }}
+        tintColor={tintColor}
       />
     </Animated.View>
   );

@@ -1,4 +1,4 @@
-import Confetti from 'react-native-new-confetti';
+import { MoneyConfetti } from 'react-native-new-confetti';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import React from 'react';
 
@@ -26,7 +26,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Button active={confettiActive} onPress={() => setConfettiActive(true)} />
-      <Confetti
+      <MoneyConfetti
         run={confettiActive}
         onConfettiRunFinished={() => {
           setConfettiActive(false);

@@ -3,33 +3,47 @@ import ConfettiImage from '../assets/dollar.png';
 
 import { StyleSheet, View } from 'react-native';
 import AnimatedPiece from '../components/AnimatedPiece';
-import { createConfettiWithoutColors } from '../utils/functions';
+import {
+  createConfettiWithoutColors,
+  createConfetti,
+} from '../utils/functions';
 import { runOnJS } from 'react-native-reanimated';
 import {
+  CONFETTI_COLORS,
   CONFETTI_SIZE_BAND,
   NUM_CONFETTI,
   TIMEOUT_THRESHOLD,
   Y_BAND,
 } from '../utils/constants';
-import type { ConfettiItems, MoneyConfettiProps } from '../utils/types';
+import type { ConfettiItems, CustomConfettiProps } from '../utils/types';
 
-const MoneyConfetti = ({
+const CustomConfetti = ({
   confettiSizeBand = CONFETTI_SIZE_BAND,
   numConfetti = NUM_CONFETTI,
   confettiImage = ConfettiImage,
   yBand = Y_BAND,
   run = true,
   timeoutThreshold = TIMEOUT_THRESHOLD,
+  confettiColors = CONFETTI_COLORS,
   onConfettiRunFinished,
-}: MoneyConfettiProps) => {
+  withColors = false,
+  withHeight = false,
+  withWidth = false,
+}: CustomConfettiProps) => {
   const [confettiItems, createConfettiItems] = useState<ConfettiItems[]>([]);
   const [timing, setTiming] = useState(0);
 
   const start = useCallback(() => {
-    createConfettiItems(
-      createConfettiWithoutColors(confettiSizeBand, numConfetti, yBand)
-    );
-  }, [confettiSizeBand, numConfetti, yBand]);
+    if (withColors) {
+      createConfettiItems(
+        createConfetti(confettiSizeBand, numConfetti, confettiColors, yBand)
+      );
+    } else {
+      createConfettiItems(
+        createConfettiWithoutColors(confettiSizeBand, numConfetti, yBand)
+      );
+    }
+  }, [confettiSizeBand, numConfetti, confettiColors, yBand, withColors]);
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -62,7 +76,7 @@ const MoneyConfetti = ({
   return (
     <View pointerEvents="none" style={StyleSheet.absoluteFill}>
       {confettiItems.map(
-        ({ key, x, y, rotate, xVel, elasticity, yVel, size }) => (
+        ({ key, x, y, rotate, xVel, elasticity, yVel, size, color }) => (
           <AnimatedPiece
             key={key}
             x={x}
@@ -70,10 +84,13 @@ const MoneyConfetti = ({
             rotate={rotate}
             image={confettiImage}
             xVel={xVel}
+            color={color}
             elasticity={elasticity}
             yVel={yVel}
             size={size}
-            withWidth
+            withHeight={withHeight}
+            withWidth={withWidth}
+            withTintColor={withColors}
           />
         )
       )}
@@ -81,4 +98,4 @@ const MoneyConfetti = ({
   );
 };
 
-export default MoneyConfetti;
+export default CustomConfetti;

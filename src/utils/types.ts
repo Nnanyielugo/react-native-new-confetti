@@ -58,7 +58,12 @@ export interface DefaultConfettiProps extends BaseProps {
   confettiColors?: string[];
 }
 
-export interface CustomConfettiProps extends BaseProps {}
+export interface CustomConfettiProps extends BaseProps {
+  withColors?: boolean;
+  confettiColors?: string[];
+  withHeight?: boolean;
+  withWidth?: boolean;
+}
 
 export type AnimatedPieceProps = {
   x: number;
@@ -70,7 +75,8 @@ export type AnimatedPieceProps = {
   elasticity: number;
   image: ImageSourcePropType;
   size: number;
-  withRect?: boolean;
+  withHeight?: boolean;
+  withWidth?: boolean;
   withTintColor?: boolean;
 };
 

@@ -22,10 +22,10 @@ export type BaseProps = {
    */
   numConfetti?: number;
   /**
-   * @description how far off the top of the screen you want the confetti items to begin.
-   * @default a random number between -1000 to -100 for each confetti piece.
+   * @description how far off the top of the screen you want each confetti item to begin.
+   * @default[-500, -100].
    */
-  yBand?: number;
+  yBand?: [number, number];
   /**
    * @description how long you want your confetti animation to run for.
    * @default 10000ms

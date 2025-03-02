@@ -6,7 +6,6 @@ Confetti package created with reanimated v3 and no other external dependencies.
 
 https://github.com/user-attachments/assets/f8fe0459-bdb9-47b7-91b1-ef0055c3ab70
 
-
 ## Installation
 
 ```sh
@@ -57,7 +56,7 @@ const [confettiActive, setConfettiActive] = React.useState(false);
 | `confettiColors`        | No       | ['#54d1fe', '#FF0000', '#2d93ad', '#000000', '#00FF00', '#ffd639', '#0a0b3d', '#ea6645', '#39ffa0'] | Color range of confetti pieces.                                                                         |
 | `confettiSizeBand`      | No       | [10, 19]                                                                                            | A size range of for confetti pieces.                                                                    |
 | `confettiImage`         | No       | N/A                                                                                                 | Image for your confetti animation. Can be anything really.                                              |
-| `yBand`                 | No       | Between -1000 to -100 for each confetti piece.                                                      | How far off the top of the screen you want the confetti items to begin.                                 |
+| `yBand`                 | No       | [-500, - 100]                                                                                       | How far off the top of the screen you want the confetti items to begin.                                 |
 | `timeoutThreshold`      | No       | 10000ms                                                                                             | How long you want your confetti animation to run for.                                                   |
 
 ## Contributing

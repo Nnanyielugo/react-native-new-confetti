@@ -53,6 +53,8 @@ export interface DefaultConfettiProps extends BaseProps {
   confettiColors?: string[];
 }
 
+export interface SnowflakeConfettiProps extends BaseProps {}
+
 export interface CustomConfettiProps extends BaseProps {
   /**
    * @description image for your confetti animation. Can be anything really.

@@ -16,7 +16,6 @@ import type { ConfettiItems, MoneyConfettiProps } from '../utils/types';
 const MoneyConfetti = ({
   confettiSizeBand = CONFETTI_SIZE_BAND,
   numConfetti = NUM_CONFETTI,
-  confettiImage = ConfettiImage,
   yBand = Y_BAND,
   run = true,
   timeoutThreshold = TIMEOUT_THRESHOLD,
@@ -68,7 +67,7 @@ const MoneyConfetti = ({
             x={x}
             y={y}
             rotate={rotate}
-            image={confettiImage}
+            image={ConfettiImage}
             xVel={xVel}
             elasticity={elasticity}
             yVel={yVel}

@@ -4,7 +4,10 @@ Confetti package created with reanimated v3 and also provides a few other confet
 
 #### iOS
 
-https://github.com/user-attachments/assets/f8fe0459-bdb9-47b7-91b1-ef0055c3ab70
+CustomConfetti | SnowFlakeConfetti | HeartConfetti | MoneyConfetti | CustomWithKudos
+--|--|--|--|--
+<img src="https://github.com/user-attachments/assets/98aee419-4743-45ad-9c3d-e72050f55e23" width=170 /> | <img src="https://github.com/user-attachments/assets/1916b888-d5e3-4dfc-b091-58ff3e4fdc54" width=170 /> | <img src="https://github.com/user-attachments/assets/35e0f89a-6b92-4b4c-9ad3-e95d3f237ee2" width=170 /> | <img src="https://github.com/user-attachments/assets/7bc5a9b5-58ee-45cc-8a1c-6aa34eecf6cd" width=170 /> | <img src="https://github.com/user-attachments/assets/21ca02b1-f725-496c-bc8d-11c16db4ec2c" width=170 />
+
 
 #### Android
 
@@ -55,7 +58,7 @@ const [confettiActive, setConfettiActive] = React.useState(false);
 
 #### MoneyConfetti
 
-**Note** Same implementation as **_HeartConfetti_** and **_SnowFlakeConfetti_**, just switch the imports.
+**Note:** Same implementation as _HeartConfetti_ and _SnowFlakeConfetti_, just switch the imports.
 
 ```js
 // ...
@@ -92,7 +95,7 @@ import YourCustomImage from 'path-to-your-custom-image';
 #### Base Props
 
 All confetti types accept these properties.
-**Note** MoneyConfetti, SnowFlakeConfetti and HeartConfetti use the exact same props as BaseProps.
+**Note:** _MoneyConfetti_, _SnowFlakeConfetti_ and _HeartConfetti_ use the exact same props as BaseProps.
 
 | Name                    | Required | Default Value | Description                                                                                            |
 | ----------------------- | -------- | ------------- | ------------------------------------------------------------------------------------------------------ |

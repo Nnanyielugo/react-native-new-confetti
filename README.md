@@ -1,10 +1,14 @@
 # react-native-new-confetti
 
-Confetti package created with reanimated v3 and no other external dependencies.
+Confetti package created with reanimated v3 and also provides a few other confetti types out of the box.
 
 #### iOS
 
 https://github.com/user-attachments/assets/f8fe0459-bdb9-47b7-91b1-ef0055c3ab70
+
+#### Android
+
+_Android demo videos coming soon_
 
 ## Installation
 
@@ -29,6 +33,8 @@ npx expo install react-native-reanimated
 
 ## Usage
 
+#### Default Confetti
+
 ```js
 import { useState } from 'react';
 import Confetti from 'react-native-new-confetti';
@@ -47,20 +53,54 @@ const [confettiActive, setConfettiActive] = React.useState(false);
 />;
 ```
 
+#### MoneyConfetti
+
+**Note** Same implementation as **_HeartConfetti_** and **_SnowFlakeConfetti_**, just switch the imports.
+
+```js
+// ...
+import { MoneyConfetti } from 'react-native-new-confetti';
+// ...
+
+<MoneyConfetti
+  run={confettiActive}
+  onConfettiRunFinished={() => {
+    setConfettiActive(false);
+  }}
+/>;
+```
+
+#### CustomConfetti
+
+```js
+// ...
+import { MoneyConfetti } from 'react-native-new-confetti';
+import YourCustomImage from 'path-to-your-custom-image';
+// ...
+
+<MoneyConfetti
+  run={confettiActive}
+  confettiImage={YourCustomImage}
+  onConfettiRunFinished={() => {
+    setConfettiActive(false);
+  }}
+/>;
+```
+
 ## Props
 
 #### Base Props
 
 All confetti types accept these properties.
-**Note** MoneyConfetti, SnowFlakeConfetti and HeartConfetti use the eacct same props as BaseProps.
+**Note** MoneyConfetti, SnowFlakeConfetti and HeartConfetti use the exact same props as BaseProps.
 
-| Name                    | Required | Default Value | Description                                                                                             |
-| ----------------------- | -------- | ------------- | ------------------------------------------------------------------------------------------------------- |
-| `run`                   | No       | false         | Whether the confetti should run or not.                                                                 |
-| `onConfettiRunFinished` | Yes      |               | Function that runs after the confetti animation had finished. This is where you set your run to false.. |
-| `confettiSizeBand`      | No       | [10, 19]      | A size range of for confetti pieces.                                                                    |
-| `yBand`                 | No       | [-500, -100]  | How far off the top of the screen you want the confetti items to begin.                                 |
-| `timeoutThreshold`      | No       | 10000ms       | How long you want your confetti animation to run for.                                                   |
+| Name                    | Required | Default Value | Description                                                                                            |
+| ----------------------- | -------- | ------------- | ------------------------------------------------------------------------------------------------------ |
+| `run`                   | No       | false         | Whether the confetti should run or not.                                                                |
+| `onConfettiRunFinished` | Yes      |               | Function that runs after the confetti animation had finished. This is where you set your run to false. |
+| `confettiSizeBand`      | No       | [10, 19]      | A size range of for confetti pieces.                                                                   |
+| `yBand`                 | No       | [-500, -100]  | How far off the top of the screen you want the confetti items to begin.                                |
+| `timeoutThreshold`      | No       | 10000ms       | How long you want your confetti animation to run for.                                                  |
 
 #### Default Confetti Props
 

@@ -1,5 +1,11 @@
-import { MoneyConfetti } from 'react-native-new-confetti';
+import {
+  // CustomConfetti,
+  // MoneyConfetti,
+  SnowFlakeConfetti,
+  // HeartConfetti,
+} from 'react-native-new-confetti';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+// import ConfettiImage from '../assets/kudos.png';
 import React from 'react';
 
 type ButtonProps = {
@@ -26,11 +32,15 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Button active={confettiActive} onPress={() => setConfettiActive(true)} />
-      <MoneyConfetti
+      <SnowFlakeConfetti
         run={confettiActive}
+        // confettiImage={ConfettiImage}
         onConfettiRunFinished={() => {
           setConfettiActive(false);
         }}
+        // yBand={[-3000 , -100]}
+        // confettiSizeBand={[5, 10]}
+        // withColors
       />
     </View>
   );
@@ -41,7 +51,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
+    backgroundColor: '#363956',
   },
   buttonContainer: {
     borderColor: 'gray',

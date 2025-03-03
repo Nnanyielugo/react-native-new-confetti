@@ -72,7 +72,6 @@ const SnowFlakeConfetti = ({
             elasticity={elasticity}
             yVel={yVel}
             size={size}
-            withWidth
           />
         )
       )}

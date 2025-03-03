@@ -34,6 +34,8 @@ export type BaseProps = {
 };
 
 export interface MoneyConfettiProps extends BaseProps {}
+export interface SnowflakeConfettiProps extends BaseProps {}
+export interface HeartConfettiProps extends BaseProps {}
 
 export interface DefaultConfettiProps extends BaseProps {
   /**
@@ -52,8 +54,6 @@ export interface DefaultConfettiProps extends BaseProps {
    */
   confettiColors?: string[];
 }
-
-export interface SnowflakeConfettiProps extends BaseProps {}
 
 export interface CustomConfettiProps extends BaseProps {
   /**

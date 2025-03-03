@@ -1,5 +1,3 @@
-import { randomBetween } from './functions';
-
 export const NUM_CONFETTI = 100;
 export const CONFETTI_COLORS = [
   '#54d1fe',
@@ -13,5 +11,5 @@ export const CONFETTI_COLORS = [
   '#39ffa0',
 ];
 export const CONFETTI_SIZE_BAND: [number, number] = [10, 19];
-export const Y_BAND = randomBetween(-1000, -100);
+export const Y_BAND: [number, number] = [-500, -100];
 export const TIMEOUT_THRESHOLD = 10000;

@@ -1,4 +1,5 @@
 # react-native-new-confetti
+[![NPM](https://img.shields.io/npm/v/react-native-new-confetti?logo=npm)](https://www.npmjs.com/package/react-native-new-confetti)
 
 Confetti package created with reanimated v3 and also provides a few other confetti types out of the box.
 
